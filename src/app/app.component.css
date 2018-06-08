@@ -1,0 +1,39 @@
+.button-row {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    width: 90%;
+    background: #eee !important;
+    display: inline-block ;
+}
+
+.each-card {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.grid-tile {
+    background-color: #ddd !important;
+    color: #000 !important;
+}
+
+.icon {
+    font-size: 22px !important;
+    vertical-align: middle !important;
+    float: left !important;
+    margin-left: 85% !important;
+}
+
+.mat-button {
+    min-width: none !important;
+}
+
+.each {
+    margin-bottom: 10px;
+}
+
+.container {
+    margin: 40px;
+}
