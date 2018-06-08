@@ -9,6 +9,7 @@ export class AppComponent {
   cards = ['move this card',
            'click this card',
            'drag and drop this card'];
+  // results: any = [];
   moveRight() {
     console.log('move right card');
   }
