@@ -6,10 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  cards = ['move this card',
-           'click this card',
-           'drag and drop this card'];
-  // results: any = [];
+  lists = ['Team Name1', 'Team Name2', 'Team Name3'];
+  value = '';
   moveRight() {
     console.log('move right card');
   }

@@ -2,13 +2,19 @@
   <mat-grid-list cols="11">
     <mat-grid-tile colspan="5" rowspan="5" class="grid-tile">
       <mat-grid-tile-header class="grid-tile">
-        <h3>Filter</h3>
-        <button mat-button class="icon">
-          <mat-icon>close</mat-icon>
-        </button>
+        <mat-form-field class="example-form-field">
+          <input matInput type="text" placeholder="Filter Input" [(ngModel)]="searchText"/>
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon class="icon">close</mat-icon>
+          </button>
+        </mat-form-field>
       </mat-grid-tile-header>
       <div class="card">
-        <mat-card class="each-card" *ngFor="let card of cards">{{card}}</mat-card>
+        <mat-list role="list">
+          <div class="list" *ngFor="let list of lists | filter: searchText">
+            <mat-list-item role="listitem">{{list}}</mat-list-item>
+          </div>
+        </mat-list>
       </div>
     </mat-grid-tile>
     <mat-grid-tile rowspan="5">
