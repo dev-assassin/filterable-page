@@ -45,3 +45,8 @@
     margin-bottom: 10px;
     background-color: #eee;
 }
+
+.list.active {
+    background-color:#ff4081 !important;
+    color: white;
+}

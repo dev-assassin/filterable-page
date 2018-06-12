@@ -27,7 +27,7 @@ import { FilterPipe } from './filter.pipe';
     MatCardModule,
     MatIconModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
