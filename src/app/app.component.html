@@ -11,7 +11,7 @@
       </mat-grid-tile-header>
       <div class="card">
         <mat-list role="list">
-          <div class="list" *ngFor="let list of lists | filter: searchText; let i = index" (click)="setClickedList(i)" [ngClass]="{'active': i == selectedList}">
+          <div class="list" *ngFor="let list of lists | filter: searchText; let i = index" (click)="setClickedList(i)" [ngClass]="{'active': selectedList[i]}">
             <mat-list-item role="listitem">{{list}}</mat-list-item>
           </div>
         </mat-list>

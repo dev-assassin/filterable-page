@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   lists = ['Team Name1', 'Team Name2', 'Team Name3', 'Team Name4', 'Team Name5'];
   searchText: string;
-  selectedList: boolean;
+  selectedList: boolean[] = [];
   moveRight() {
     console.log('move right card');
   }
@@ -25,7 +25,7 @@ export class AppComponent {
     this.searchText = null;
   }
   setClickedList(index) {
-    this.selectedList = index;
+    this.selectedList[index] = !this.selectedList[index];
     console.log(index);
   }
 }
