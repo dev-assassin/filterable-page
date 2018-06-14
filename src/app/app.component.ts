@@ -11,6 +11,8 @@ export class AppComponent {
   selectedList: boolean[] = [];
   selectedCard: boolean[] = [];
   cards = [];
+  isDisabledLR = false;
+  isDisabledRL = true;
   moveRight() {
     for (let i = 0, len = this.lists.length; i < len; i++) {
       const leftright = this.lists[i];
@@ -21,12 +23,21 @@ export class AppComponent {
       }
     }
     this.lists.splice(0, 1);
+    this.isDisabledRL = false;
   }
   moveDoubleRight() {
-    this.cards = this.lists.splice(0, this.lists.length);
+    // this.cards = this.lists.splice(0, this.lists.length);
+    this.cards = this.lists;
+    this.lists = [];
+    this.isDisabledLR = true;
+    this.isDisabledRL = false;
   }
   moveDoubleLeft() {
-    this.lists = this.cards.splice(0, this.cards.length);
+    // this.lists = this.cards.splice(0, this.cards.length);
+    this.lists = this.cards;
+    this.cards = [];
+    this.isDisabledRL = true;
+    this.isDisabledLR = false;
   }
   moveLeft() {
     for (let i = 0, len = this.cards.length; i < len; i++) {

@@ -25,12 +25,12 @@
           </button>
         </div>
         <div class="each">
-          <button mat-fab (click)=moveDoubleRight()>
+          <button [disabled]="isDisabledLR" mat-fab (click)=moveDoubleRight()>
             <mat-icon>fast_forward</mat-icon>
           </button>
         </div>
         <div class="each">
-          <button mat-fab (click)=moveDoubleLeft()>
+          <button [disabled]="isDisabledRL" mat-fab (click)=moveDoubleLeft()>
             <mat-icon>fast_rewind</mat-icon>
           </button>
         </div>
