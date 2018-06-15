@@ -15,25 +15,22 @@ export class AppComponent {
   isDisabledRL = true;
   moveRight() {
     for (let i = 0, len = this.lists.length; i < len; i++) {
-      const leftright = this.lists[i];
-      const found = this.cards.find((e: any) => e === leftright);
-      if (!found) {
+      if (this.selectedList[i] === true) {
+        const leftright = this.lists[i];
         this.cards.push(leftright);
-        break;
+        console.log(this.cards, i);
+        this.lists.splice(i, 1);
       }
     }
-    this.lists.splice(0, 1);
     this.isDisabledRL = false;
   }
   moveDoubleRight() {
-    // this.cards = this.lists.splice(0, this.lists.length);
     this.cards = this.lists;
     this.lists = [];
     this.isDisabledLR = true;
     this.isDisabledRL = false;
   }
   moveDoubleLeft() {
-    // this.lists = this.cards.splice(0, this.cards.length);
     this.lists = this.cards;
     this.cards = [];
     this.isDisabledRL = true;
@@ -41,15 +38,12 @@ export class AppComponent {
   }
   moveLeft() {
     for (let i = 0, len = this.cards.length; i < len; i++) {
-      const rightleft = this.cards[i];
-      const move = this.lists.find((e: any) => e === rightleft);
-      if (!move) {
-        this.lists.push(rightleft);
-        break;
+      if (this.selectedCard[i] === true) {
+        const rigntleft = this.cards[i];
+        this.lists.push(rigntleft);
+        console.log(this.lists, i);
+        this.cards.splice(i, 1);
       }
-    }
-    if (this.cards.length > 0) {
-      this.cards.splice(0, 1);
     }
   }
   value() {
@@ -57,11 +51,11 @@ export class AppComponent {
   }
   setClickedList(index) {
     this.selectedList[index] = !this.selectedList[index];
-    console.log(index);
+    console.log(this.selectedList[index], index);
   }
   setClickedCard(index) {
     this.selectedCard[index] = !this.selectedCard[index];
-    console.log(index);
+    console.log(index, this.selectedCard[index]);
   }
 }
 
