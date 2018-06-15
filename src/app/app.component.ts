@@ -27,14 +27,18 @@ export class AppComponent {
     this.isDisabledRL = false;
   }
   moveDoubleRight() {
-    this.cards = this.lists;
+    this.cards = this.cards.concat(this.lists);
     this.lists = [];
+    this.selectedCard = [];
+    this.selectedList = [];
     this.isDisabledLR = true;
     this.isDisabledRL = false;
   }
   moveDoubleLeft() {
-    this.lists = this.cards;
+    this.lists = this.lists.concat(this.cards);
     this.cards = [];
+    this.selectedCard = [];
+    this.selectedList = [];
     this.isDisabledRL = true;
     this.isDisabledLR = false;
   }
