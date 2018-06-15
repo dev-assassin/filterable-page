@@ -20,6 +20,8 @@ export class AppComponent {
         this.cards.push(leftright);
         console.log(this.cards, i);
         this.lists.splice(i, 1);
+        this.selectedList.splice(i, 1);
+        i--;
       }
     }
     this.isDisabledRL = false;
@@ -43,6 +45,8 @@ export class AppComponent {
         this.lists.push(rigntleft);
         console.log(this.lists, i);
         this.cards.splice(i, 1);
+        this.selectedCard.splice(i, 1);
+        i--;
       }
     }
   }
