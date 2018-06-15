@@ -18,7 +18,6 @@ export class AppComponent {
       if (this.selectedList[i] === true) {
         const leftright = this.lists[i];
         this.cards.push(leftright);
-        console.log(this.cards, i);
         this.lists.splice(i, 1);
         this.selectedList.splice(i, 1);
         i--;
@@ -47,7 +46,6 @@ export class AppComponent {
       if (this.selectedCard[i] === true) {
         const rigntleft = this.cards[i];
         this.lists.push(rigntleft);
-        console.log(this.lists, i);
         this.cards.splice(i, 1);
         this.selectedCard.splice(i, 1);
         i--;
@@ -59,11 +57,9 @@ export class AppComponent {
   }
   setClickedList(index) {
     this.selectedList[index] = !this.selectedList[index];
-    console.log(this.selectedList[index], index);
   }
   setClickedCard(index) {
     this.selectedCard[index] = !this.selectedCard[index];
-    console.log(index, this.selectedCard[index]);
   }
 }
 
